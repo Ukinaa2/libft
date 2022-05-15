@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/15 12:32:47 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/15 12:36:47 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] && i < len)
 	{
 		if (ft_strncmp(big, little, ft_strlen(little)) == 0)
-			return ((char *)big);
+			return ((char *)(big + i));
 		i++;
 	}
 	return (0);
