@@ -17,16 +17,18 @@ OBJS	=	${SRCS:.c=.o}
 
 FLAGS	=	-Wall -Wextra -Werror -I
 
+RM		=	rm -f
+
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 clean:
-	rm -rf ${OBJS}
+	${RM} ${OBJS}
 
 fclean: clean
-	rm -rf ${NAME}
+	${RM} ${NAME}
 
 re: fclean all
 
