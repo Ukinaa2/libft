@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 11:42:42 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/14 17:45:32 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/16 14:00:17 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = ft_strlen(dst);
 	j = 0;
-	if (!size)
-		return (i + ft_strlen(src));
+	if (size < i)
+		return (size + ft_strlen(src));
 	while (src[j] && i + j < size - 1)
 	{
 		dst[i + j] = src[j];
