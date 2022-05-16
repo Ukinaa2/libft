@@ -6,23 +6,23 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:54:16 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/15 22:11:45 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/16 12:27:18 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	nb;
-	int negative;
+	int	negative;
 
 	nb = 0;
 	negative = 1;
 	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
 	if (*nptr == '-')
-		negative = 1;
+		negative = -1;
 	if (*nptr == '-' || *nptr == '+')
 		nptr++;
 	while (*nptr >= '0' && *nptr <= '9')

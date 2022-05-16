@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:45:53 by gguedes          ###   ########.fr       */
+/*   Created: 2022/05/09 11:58:16 by gguedes           #+#    #+#             */
+/*   Updated: 2022/05/10 11:27:26 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (big[i] && i < len)
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		if (ft_strncmp(big + i, little, ft_strlen(little)) == 0)
-			return ((char *)(big + i));
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	return (0);
+	else if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	if (n >= 0)
+		ft_putchar_fd((n % 10) + 48, fd);
 }

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:45:53 by gguedes          ###   ########.fr       */
+/*   Created: 2022/05/12 13:09:55 by gguedes           #+#    #+#             */
+/*   Updated: 2022/05/12 13:36:02 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	int		i;
+	char	*str;
 
 	i = 0;
-	while (big[i] && i < len)
+	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (str == 0)
+		return (0);
+	while (s[i])
 	{
-		if (ft_strncmp(big + i, little, ft_strlen(little)) == 0)
-			return ((char *)(big + i));
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	return (0);
+	str[i] = 0;
+	return (str);
 }

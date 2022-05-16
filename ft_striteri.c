@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:45:53 by gguedes          ###   ########.fr       */
+/*   Created: 2022/05/12 12:12:29 by gguedes           #+#    #+#             */
+/*   Updated: 2022/05/16 11:47:54 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (big[i] && i < len)
+	while (s[i])
 	{
-		if (ft_strncmp(big + i, little, ft_strlen(little)) == 0)
-			return ((char *)(big + i));
+		f(i, s);
 		i++;
 	}
-	return (0);
 }

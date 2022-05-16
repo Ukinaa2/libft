@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:45:53 by gguedes          ###   ########.fr       */
+/*   Created: 2022/05/05 11:30:34 by gguedes           #+#    #+#             */
+/*   Updated: 2022/05/09 13:53:14 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*ft_calloc(size_t num, size_t size)
 {
-	size_t	i;
+	void	*p;
 
-	i = 0;
-	while (big[i] && i < len)
-	{
-		if (ft_strncmp(big + i, little, ft_strlen(little)) == 0)
-			return ((char *)(big + i));
-		i++;
-	}
-	return (0);
+	p = malloc(num * size);
+	if (p == 0)
+		return (0);
+	ft_bzero(p, num * size);
+	return (p);
 }

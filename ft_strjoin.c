@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:45:53 by gguedes          ###   ########.fr       */
+/*   Created: 2022/05/09 10:51:02 by gguedes           #+#    #+#             */
+/*   Updated: 2022/05/16 11:47:58 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	int		i;
+	char	*str;
 
 	i = 0;
-	while (big[i] && i < len)
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return (0);
+	while (*s1)
 	{
-		if (ft_strncmp(big + i, little, ft_strlen(little)) == 0)
-			return ((char *)(big + i));
+		str[i] = *(char *)s1;
 		i++;
+		s1++;
 	}
-	return (0);
+	while (*s2)
+	{
+		str[i] = *(char *)s2;
+		i++;
+		s2++;
+	}
+	return (str);
 }
