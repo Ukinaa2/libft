@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:09:55 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/12 13:36:02 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/16 18:33:38 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (str == 0)
+	if (!str)
 		return (0);
 	while (s[i])
 	{

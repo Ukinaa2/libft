@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 23:22:42 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 13:50:14 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/16 16:40:37 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*(unsigned char *)(s + i) == (unsigned char)c)
-			return (s + i);
+			return ((void *)s + i);
 		i++;
 	}
 	return (0);
