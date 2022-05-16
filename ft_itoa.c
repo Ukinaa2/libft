@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:26:45 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:47:46 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/16 18:44:07 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc((i + 1) * sizeof(char));
 	if (!str)
 		return (0);
-	str[i] = 0;
-	i--;
+	str[i--] = 0;
 	if (n < 0)
 	{
 		str[0] = '-';
