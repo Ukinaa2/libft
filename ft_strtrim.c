@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:15:54 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 18:30:23 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/17 12:02:36 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		end;
 	char	*str;
-
+	if (!s1)
+		return (0);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	end = ft_strlen(s1);

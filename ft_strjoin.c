@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:51:02 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/17 11:35:25 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/17 12:01:45 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 
 	i = 0;
+	if (!s1)
+		return (0);
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (0);

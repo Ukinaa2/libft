@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:06:04 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/17 11:33:44 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/17 12:00:30 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*dest;
 
+	if (!s)
+		return (0);
 	dest = malloc((len + 1) * sizeof(*s));
 	if (!dest || start >= ft_strlen(s))
 		return (dest);

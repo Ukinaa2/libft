@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:52:52 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:39:03 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/17 12:03:15 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 	int		n_subs;
 	char	**array;
 
+	if (!s)
+		return (0);
 	i = 0;
 	n_subs = count_subs(s, c);
 	array = (char **)malloc((n_subs + 1) * sizeof(char *));
