@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:51:02 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/16 11:47:58 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/17 11:35:25 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		s2++;
 	}
+	str[i] = 0;
 	return (str);
 }
