@@ -1,6 +1,6 @@
 NAME	=	libft.a
 
-SRCS	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+SRC		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_isascii.c ft_isprint.c ft_strlen.c \
 			ft_memset.c ft_bzero.c ft_memcpy.c \
 			ft_memmove.c ft_strlcpy.c ft_strlcat.c \
@@ -13,19 +13,19 @@ SRCS	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 			ft_putnbr_fd.c
 
-OBJS	=	$(SRCS:.c=.o)
+OBJ		=	$(SRC:.c=.o)
 
-FLAGS	=	-Wall -Wextra -Werror -I
+CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
