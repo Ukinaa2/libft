@@ -15,7 +15,7 @@ SRC		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 
 OBJ		=	$(SRC:.c=.o)
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -I.
 
 RM		=	rm -f
 
