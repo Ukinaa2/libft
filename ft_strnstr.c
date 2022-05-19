@@ -6,7 +6,7 @@
 /*   By: gguedes <gguedes@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 11:08:21 by gguedes           #+#    #+#             */
-/*   Updated: 2022/05/17 11:10:26 by gguedes          ###   ########.fr       */
+/*   Updated: 2022/05/19 10:40:51 by gguedes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
 	i = 0;
-	if (!len)
-		len++;
 	while (big[i] && i < len)
 	{
 		j = 0;
@@ -29,5 +27,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			return ((char *)big + i);
 		i++;
 	}
+	if (little[j] && (int)len <= 0)
+		return (0);
+	if (!big[0] && (int)len <= 0)
+		return ((char *)big);
 	return (0);
 }
