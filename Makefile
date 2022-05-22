@@ -31,7 +31,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean:
 	$(RM) $(OBJ) $(BONUS_OBJ)
