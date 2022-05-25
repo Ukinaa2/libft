@@ -12,18 +12,15 @@
 
 #include "libft.h"
 
-static int	overflow(size_t num, size_t size)
-{
-	if (size == ((num * size) / num))
-		return (1);
-	else
-		return (0);
-}
-
 void	*ft_calloc(size_t num, size_t size)
 {
 	void	*p;
 
+	if (!num || !size)
+	{
+		num = 1;
+		size = 1;
+	}
 	p = malloc(num * size);
 	if (!p)
 		return (0);
