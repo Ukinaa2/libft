@@ -30,6 +30,9 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
